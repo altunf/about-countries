@@ -5,6 +5,7 @@ import { Topbar } from "../components/Topbar";
 
 import { darkTheme, lightTheme } from "../components/styles/themeStyle";
 import { MainLayoutStyle } from "./style";
+import { GlobalStyle } from "../styles/global";
 
 function MainLayout() {
   const [theme, setTheme] = useState("light");
@@ -16,6 +17,7 @@ function MainLayout() {
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <GlobalStyle />
       <MainLayoutStyle>
         <Topbar
           toggleTheme={toggleTheme}
