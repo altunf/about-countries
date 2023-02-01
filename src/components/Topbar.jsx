@@ -5,16 +5,14 @@ import { ThemeButton } from "./ThemeButton";
 
 function Topbar({ toggleTheme, isDarkTheme, theme }) {
   return (
-    <>
-      <TopbarStyle>
-        <Logo />
-        <ThemeButton
-          toggleTheme={toggleTheme}
-          isDarkTheme={isDarkTheme}
-          theme={theme}
-        />
-      </TopbarStyle>
-    </>
+    <TopbarStyle>
+      <Logo />
+      <ThemeButton
+        toggleTheme={toggleTheme}
+        isDarkTheme={isDarkTheme}
+        theme={theme}
+      />
+    </TopbarStyle>
   );
 }
 

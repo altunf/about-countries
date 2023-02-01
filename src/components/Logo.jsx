@@ -7,6 +7,7 @@ function Logo() {
 
 export { Logo };
 
-const LogoStyle = styled.h3`
+const LogoStyle = styled.h2`
+  margin-left: 4.1rem;
   color: ${(props) => props.theme.text};
 `;

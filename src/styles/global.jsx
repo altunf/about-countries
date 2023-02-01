@@ -4,11 +4,11 @@ export const GlobalStyle = createGlobalStyle`
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background-color: ${(props) => props.theme.backgroundColor}
+    background-color: ${(props) => props.theme.backgroundColor};
 }
-
 `;

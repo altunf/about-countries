@@ -1,7 +1,7 @@
 import React from "react";
 
-function DetailPageCard() {
+function DetailCard() {
   return <div>DetailPageCard</div>;
 }
 
-export { DetailPageCard };
+export { DetailCard };

@@ -4,7 +4,7 @@ import { BodyArea } from "../components/BodyArea";
 import { Topbar } from "../components/Topbar";
 
 import { darkTheme, lightTheme } from "../components/styles/themeStyle";
-import { MainLayoutStyle } from "./style";
+import { MainLayoutStyle } from "../layouts/styles/mainLayout-style";
 import { GlobalStyle } from "../styles/global";
 
 function MainLayout() {

@@ -8,5 +8,4 @@ export const lightTheme = {
   backgroundColor: " #fafafa",
   body: "#ffffff",
   text: "#111517",
-  input: "#858585",
 };

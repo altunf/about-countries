@@ -2,13 +2,7 @@ import styled from "styled-components";
 
 export const TopbarStyle = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 24px;
-
-  b {
-    color: ${(props) => props.theme.text};
-  }
-
+  padding: 1rem;
   background-color: ${(props) => props.theme.body};
 `;

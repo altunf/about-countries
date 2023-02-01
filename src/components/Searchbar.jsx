@@ -1,7 +1,12 @@
 import React from "react";
+import { SearchbarStyle } from "./styles/searchbar-style";
 
 function Searchbar() {
-  return <div>Searchbar</div>;
+  return (
+    <>
+      <SearchbarStyle type="name" placeholder="Search for a country..." />
+    </>
+  );
 }
 
 export { Searchbar };
