@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { BodyAreaStyle } from "./styles/body-area-style";
+import { BodyAreaStyle } from "./styles/bodyArea-style";
 
 function BodyArea() {
   return (

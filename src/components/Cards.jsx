@@ -1,9 +1,10 @@
 import React from "react";
+
 import styled from "styled-components";
 
-function Cards({ flag, name, population, region, capital }) {
+function Cards({ flag, name, population, region, capital, handleClick }) {
   return (
-    <CardsStyle>
+    <CardsStyle onClick={handleClick}>
       <img src={flag} alt="..." />
       <div>
         <h4>

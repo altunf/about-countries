@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { HomePageStyle } from "./styles/homepage-style";
+import { useNavigate } from "react-router-dom";
+
+import { HomePageStyle } from "./styles/home-page-style";
 
 import { Cards } from "../components/Cards";
 import { RegionFilter } from "../components/RegionFilter";
@@ -9,28 +11,33 @@ import axios from "axios";
 
 function HomePage() {
   const [countries, setCountries] = useState([]);
+  const navigate = useNavigate();
 
   const CountriesBoard = (
     <div className="row">
       {countries.map((item, index) => {
+        const handleClick = () => navigate(`/details/${item.name.common}`);
         return (
           <Cards
-            className="col-4"
             key={index}
             flag={item.flags.png}
             name={item.name.common}
             population={item.population}
             region={item.region}
             capital={item.capital}
+            handleClick={handleClick}
           />
         );
       })}
     </div>
   );
 
+  //
+
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((res) => {
       setCountries(res.data);
+      console.log(res.data);
     });
   }, []);
 
@@ -40,8 +47,7 @@ function HomePage() {
         <Searchbar />
         <RegionFilter />
       </div>
-
-      {CountriesBoard}
+      <div>{CountriesBoard}</div>
     </HomePageStyle>
   );
 }

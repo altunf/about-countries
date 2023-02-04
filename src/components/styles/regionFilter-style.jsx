@@ -17,18 +17,26 @@ export const RegionFilterStyle = styled.div`
     padding: 5px;
     border-top: 1px solid #e5e8ec;
     display: none;
+    position: absolute;
+    z-index: 9999;
+
+    background-color: ${(props) => props.theme.body};
   }
 
   .dropdown-body.open {
     display: block;
+    width: 200px;
   }
 
   .dropdown-item {
     padding: 10px;
+    opacity: 0.6;
   }
 
   .dropdown-item:hover {
     cursor: pointer;
+    opacity: 2;
+    transition: all 0.2s ease-in-out;
   }
 
   .dropdown-item-dot {
