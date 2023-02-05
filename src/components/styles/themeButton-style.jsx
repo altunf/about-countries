@@ -9,8 +9,4 @@ export const ThemeButtonStyle = styled.button`
 
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
-
-  i {
-    fill: ${(props) => props.theme.text};
-  }
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import {
   DetailCardStyle,
   BorderCountriesStyle,
@@ -18,8 +18,8 @@ function DetailCard({
   languages,
   borders,
 }) {
-  const navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
+
   const CountryLanguages = Object.values(languages || []).map((language) => {
     return " " + language;
   });

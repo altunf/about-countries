@@ -1,10 +1,12 @@
 import React from "react";
 import { LogoStyle } from "./styles/logo-style";
+import { useNavigate } from "react-router-dom";
 
 function Logo() {
+  const navigate = useNavigate();
   return (
     <LogoStyle>
-      <b>Where in the world?</b>
+      <b onClick={() => navigate(`/`)}>Where in the world?</b>
     </LogoStyle>
   );
 }
