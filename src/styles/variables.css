@@ -1,0 +1,11 @@
+:root {
+  --box-shadow-1: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --box-shadow-2: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  --border-radius-s: 4px;
+  --border-radius-m: 10px;
+  --border-radius-l: 16px;
+
+  --font-size-m: 14px;
+  --font-size-l: 16px;
+}

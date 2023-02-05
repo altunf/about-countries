@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const SearchbarStyle = styled.input`
-  background: ${(props) => props.theme.body};
   border: none;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  box-shadow: var(--box-shadow-2);
+  border-radius: var(--border-radius-m);
+
+  color: ${(props) => props.theme.text};
+  background-color: ${(props) => props.theme.body};
 `;

@@ -1,6 +1,9 @@
 import React from "react";
-import { DetailCardStyle } from "./styles/detailCard-style.jsx";
-import styled from "styled-components";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import {
+  DetailCardStyle,
+  BorderCountriesStyle,
+} from "./styles/detailCard-style.jsx";
 
 function DetailCard({
   image,
@@ -8,19 +11,28 @@ function DetailCard({
   nativeName,
   population,
   region,
-  sub,
+  subregion,
   capital,
-  domain,
+  tld,
   currencies,
   languages,
   borders,
 }) {
+  const navigate = useNavigate();
+  let [searchParams, setSearchParams] = useSearchParams();
   const CountryLanguages = Object.values(languages || []).map((language) => {
     return " " + language;
   });
 
   const bordersButton = borders?.map((border, index) => {
-    return <BorderButtons key={index}>{border}</BorderButtons>;
+    const handleClick = () => {
+      setSearchParams(`codes=${border}`);
+    };
+    return (
+      <BorderCountriesStyle onClick={handleClick} key={index}>
+        {border}
+      </BorderCountriesStyle>
+    );
   });
 
   return (
@@ -41,7 +53,7 @@ function DetailCard({
             <b>Region:</b> {region}
           </p>
           <p>
-            <b>Sub Region:</b> {sub}
+            <b>Sub Region:</b> {subregion}
           </p>
           <p>
             <b>Capital:</b> {capital}
@@ -49,7 +61,7 @@ function DetailCard({
         </div>
         <div className="col">
           <p>
-            <b>Top Level Domain:</b> {domain}
+            <b>Top Level Domain:</b> {tld}
           </p>
           <p>
             <b>Currencies:</b> {currencies}
@@ -70,14 +82,3 @@ function DetailCard({
 }
 
 export { DetailCard };
-
-const BorderButtons = styled.div`
-  display: flex;
-  border-radius: 4px;
-  padding: 1px 30px 1px 30px;
-  margin: 0 10px 0 10px;
-  opacity: 0.6;
-
-  background-color: ${(props) => props.theme.body};
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-`;

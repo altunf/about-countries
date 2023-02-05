@@ -1,41 +1,43 @@
 import styled from "styled-components";
 
 export const RegionFilterStyle = styled.div`
-  width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 270px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-2);
+  border-radius: var(--border-radius-m);
+
   background-color: ${(props) => props.theme.body};
 
   header {
-    padding: 10px;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   .dropdown-body {
     padding: 5px;
-    border-top: 1px solid #e5e8ec;
+    z-index: 9999;
     display: none;
     position: absolute;
-    z-index: 9999;
+    border-top: 1px solid #e5e8ec;
 
     background-color: ${(props) => props.theme.body};
   }
 
   .dropdown-body.open {
-    display: block;
     width: 200px;
+    display: block;
   }
 
   .dropdown-item {
-    padding: 10px;
     opacity: 0.6;
+    padding: 10px;
   }
 
   .dropdown-item:hover {
-    cursor: pointer;
     opacity: 2;
+    cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
 

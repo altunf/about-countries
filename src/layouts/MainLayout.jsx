@@ -1,9 +1,10 @@
-import { ThemeProvider } from "styled-components";
 import { useState } from "react";
+
+import { ThemeProvider } from "styled-components";
 import { BodyArea } from "../components/BodyArea";
 import { Topbar } from "../components/Topbar";
 
-import { darkTheme, lightTheme } from "../components/styles/themeStyle";
+import { darkTheme, lightTheme } from "../components/styles/theme-style";
 import { MainLayoutStyle } from "../layouts/styles/mainLayout-style";
 import { GlobalStyle } from "../styles/global";
 

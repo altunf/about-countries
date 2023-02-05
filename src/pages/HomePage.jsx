@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { Cards } from "../components/Cards";
+import { Searchbar } from "../components/Searchbar";
+import { RegionFilter } from "../components/RegionFilter";
 
 import { HomePageStyle } from "./styles/home-page-style";
 
-import { Cards } from "../components/Cards";
-import { RegionFilter } from "../components/RegionFilter";
-import { Searchbar } from "../components/Searchbar";
-
-import axios from "axios";
-
 function HomePage() {
-  const [countries, setCountries] = useState([]);
   const navigate = useNavigate();
+  const [countries, setCountries] = useState([]);
 
   const CountriesBoard = (
     <div className="row">
@@ -32,12 +32,9 @@ function HomePage() {
     </div>
   );
 
-  //
-
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((res) => {
       setCountries(res.data);
-      console.log(res.data);
     });
   }, []);
 
@@ -47,7 +44,7 @@ function HomePage() {
         <Searchbar />
         <RegionFilter />
       </div>
-      <div>{CountriesBoard}</div>
+      {CountriesBoard}
     </HomePageStyle>
   );
 }

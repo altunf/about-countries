@@ -1,6 +1,5 @@
 import React from "react";
-
-import styled from "styled-components";
+import { CardsStyle } from "./styles/card-style";
 
 function Cards({ flag, name, population, region, capital, handleClick }) {
   return (
@@ -25,26 +24,3 @@ function Cards({ flag, name, population, region, capital, handleClick }) {
 }
 
 export { Cards };
-
-const CardsStyle = styled.div`
-  background-color: ${(props) => props.theme.body};
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 23rem;
-  padding: 0;
-  margin: 12px;
-  margin-bottom: 1rem;
-  margin-top: 4rem;
-
-  img {
-    height: 50%;
-    width: 100%;
-  }
-
-  div {
-    padding: 2rem;
-
-    h4 {
-      margin-bottom: 1.5rem;
-    }
-  }
-`;

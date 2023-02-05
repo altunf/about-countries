@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { DetailCard } from "../components/DetailCard";
-import { useNavigate, useParams } from "react-router-dom";
-import { StyledButton } from "./styles/detail-page-style";
 import axios from "axios";
+
+import { useEffect, useState } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+
+import { DetailCard } from "../components/DetailCard";
+
+import { StyledButton, DetailPageStyle } from "./styles/detail-page-style";
 
 function DetailPage() {
   const navigate = useNavigate();
   const { name } = useParams();
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const [countryDetails, setCountryDetails] = useState([]);
 
@@ -18,14 +22,23 @@ function DetailPage() {
   )[Object.keys(countryDetails.name?.nativeName || {}).length - 1]?.common;
 
   useEffect(() => {
-    axios.get(`https://restcountries.com/v3.1/name/${name}`).then((res) => {
-      setCountryDetails(res.data[0]);
-      console.log(res.data[0]);
-    });
-  }, []);
+    if (!searchParams.get("codes")) {
+      axios.get(`https://restcountries.com/v3.1/name/${name}`).then((res) => {
+        setCountryDetails(res.data[0]);
+      });
+    } else {
+      axios
+        .get(
+          `https://restcountries.com/v3.1/alpha/${searchParams.get("codes")}`
+        )
+        .then((res) => {
+          setCountryDetails(res.data[0]);
+        });
+    }
+  }, [searchParams]);
 
   return (
-    <>
+    <DetailPageStyle>
       <StyledButton onClick={() => navigate(-1)}>
         <i className="bi bi-arrow-left" /> Back
       </StyledButton>
@@ -36,15 +49,15 @@ function DetailPage() {
           nativeName={countryNativeName}
           population={countryDetails.population}
           region={countryDetails.region}
-          sub={countryDetails.subregion}
+          subregion={countryDetails.subregion}
           capital={countryDetails.capital}
-          domain={countryDetails.tld}
+          tld={countryDetails.tld}
           currencies={countryCurrencies}
           languages={countryDetails.languages}
           borders={countryDetails.borders}
         />
       }
-    </>
+    </DetailPageStyle>
   );
 }
 

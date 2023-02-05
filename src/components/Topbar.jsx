@@ -1,7 +1,8 @@
 import React from "react";
 import { Logo } from "./Logo";
-import { TopbarStyle } from "./styles/topbar-styles";
 import { ThemeButton } from "./ThemeButton";
+
+import { TopbarStyle } from "./styles/topbar-style";
 
 function Topbar({ toggleTheme, isDarkTheme, theme }) {
   return (
