@@ -32,11 +32,13 @@ function HomePage() {
   );
 
   useEffect(() => {
-    if (!searchParams.get("region")) {
-      axios.get("https://restcountries.com/v3.1/all").then((res) => {
-        setCountries(res.data);
-      });
-    } else {
+    if (searchParams.get("name")) {
+      axios
+        .get(`https://restcountries.com/v3.1/name/${searchParams.get("name")}`)
+        .then((res) => {
+          setCountries(res.data);
+        });
+    } else if (searchParams.get("region")) {
       axios
         .get(
           `https://restcountries.com/v3.1/region/${searchParams.get("region")}`
@@ -44,6 +46,10 @@ function HomePage() {
         .then((res) => {
           setCountries(res.data);
         });
+    } else {
+      axios.get("https://restcountries.com/v3.1/all").then((res) => {
+        setCountries(res.data);
+      });
     }
   }, [countries]);
 
