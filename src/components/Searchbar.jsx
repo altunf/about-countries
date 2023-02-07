@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { FormStyle } from "./styles/searchbar-style";
 
-function Searchbar() {
+function Searchbar({ customFilter }) {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
-  let [searchParams, setSearchParams] = useSearchParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +12,7 @@ function Searchbar() {
   };
   const handleChange = (e) => {
     setInput(e.target.value);
-    setSearchParams(`name=${input.toLocaleLowerCase()}`);
+    customFilter(e.target.value);
   };
   return (
     <FormStyle onSubmit={handleSubmit}>
