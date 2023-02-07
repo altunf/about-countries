@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { FormStyle } from "./styles/searchbar-style";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Searchbar({ customFilter }) {
-  const [input, setInput] = useState("");
+import { FormStyle } from "./styles/search-bar-style";
+
+function SearchBar({ customFilter }) {
   const navigate = useNavigate();
+  const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,4 +30,4 @@ function Searchbar({ customFilter }) {
   );
 }
 
-export { Searchbar };
+export { SearchBar };

@@ -1,4 +1,4 @@
-import { ThemeButtonStyle } from "./styles/themeButton-style";
+import { ThemeButtonStyle } from "./styles/theme-button-style";
 
 function ThemeButton({ toggleTheme }) {
   return (

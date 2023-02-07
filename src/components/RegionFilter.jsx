@@ -1,8 +1,15 @@
-import React, { useState } from "react";
-import { RegionFilterStyle } from "./styles/regionFilter-style";
+import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
-import { regionList } from "../services/country";
+import { RegionFilterStyle } from "./styles/region-filter-style";
+
+const regionList = [
+  { id: 0, label: "Africa" },
+  { id: 1, label: "America" },
+  { id: 2, label: "Asia" },
+  { id: 3, label: "Europe" },
+  { id: 4, label: "Oceania" },
+];
 
 function RegionFilter() {
   const navigate = useNavigate();
@@ -28,12 +35,13 @@ function RegionFilter() {
             selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
             setSearchParams(`region=${item.label}`);
           };
+
           return (
             <div
               key={index}
+              id={item.id}
               className="dropdown-item"
               onClick={(e) => handleItemClick(e.target.id)}
-              id={item.id}
             >
               <span
                 className={`dropdown-item-dot ${

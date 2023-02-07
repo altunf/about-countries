@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const RegionFilterStyle = styled.div`
-  width: 270px;
   cursor: pointer;
+
+  width: 270px;
+
   box-shadow: var(--box-shadow-2);
   border-radius: var(--border-radius-m);
 
@@ -20,19 +22,21 @@ export const RegionFilterStyle = styled.div`
     z-index: 9999;
     display: none;
     position: absolute;
-    border-top: 1px solid #e5e8ec;
+
+    border-radius: var(--border-radius-m);
 
     background-color: ${(props) => props.theme.body};
+    border-top: 5px solid ${(props) => props.theme.dropDown};
   }
 
   .dropdown-body.open {
-    width: 200px;
+    width: 270px;
     display: block;
   }
 
   .dropdown-item {
     opacity: 0.6;
-    padding: 10px;
+    padding: 8px;
   }
 
   .dropdown-item:hover {

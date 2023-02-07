@@ -1,4 +1,3 @@
-import React from "react";
 import { CardsStyle } from "./styles/card-style";
 
 function Cards({ flag, name, population, region, capital, handleClick }) {
@@ -7,7 +6,7 @@ function Cards({ flag, name, population, region, capital, handleClick }) {
       <img src={flag} alt="..." />
       <div>
         <h4>
-          <b>{name}</b>{" "}
+          <b>{name}</b>
         </h4>
         <p>
           <b>Population:</b> {population}

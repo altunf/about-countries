@@ -17,8 +17,6 @@ export const FormStyle = styled.form`
       outline: none;
       margin: 1.2rem;
 
-      border-radius: var(--border-radius-m);
-
       color: ${(props) => props.theme.text};
       background-color: ${(props) => props.theme.body};
     }

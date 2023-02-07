@@ -1,20 +1,19 @@
-import React from "react";
 import { Logo } from "./Logo";
 import { ThemeButton } from "./ThemeButton";
 
-import { TopbarStyle } from "./styles/topbar-style";
+import { TopBarStyle } from "./styles/top-bar-style";
 
-function Topbar({ toggleTheme, isDarkTheme, theme }) {
+function TopBar({ toggleTheme, isDarkTheme, theme }) {
   return (
-    <TopbarStyle>
+    <TopBarStyle>
       <Logo />
       <ThemeButton
         toggleTheme={toggleTheme}
         isDarkTheme={isDarkTheme}
         theme={theme}
       />
-    </TopbarStyle>
+    </TopBarStyle>
   );
 }
 
-export { Topbar };
+export { TopBar };

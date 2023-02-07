@@ -1,33 +1,32 @@
-import React from "react";
 import { useSearchParams } from "react-router-dom";
+
 import {
   DetailCardStyle,
   BorderCountriesStyle,
-} from "./styles/detailCard-style.jsx";
+} from "./styles/detail-card-style.jsx";
 
 function DetailCard({
-  image,
-  name,
   nativeName,
   population,
-  region,
-  subregion,
-  capital,
-  tld,
   currencies,
   languages,
+  subregion,
+  capital,
   borders,
+  region,
+  image,
+  name,
+  tld,
 }) {
   let [searchParams, setSearchParams] = useSearchParams();
 
-  const CountryLanguages = Object.values(languages || []).map((language) => {
-    return " " + language;
-  });
+  const CountryLanguages = Object.values(languages || []).map(
+    (language) => " " + language
+  );
 
   const bordersButton = borders?.map((border, index) => {
-    const handleClick = () => {
-      setSearchParams(`codes=${border}`);
-    };
+    const handleClick = () => setSearchParams(`codes=${border}`);
+
     return (
       <BorderCountriesStyle onClick={handleClick} key={index}>
         {border}
@@ -42,7 +41,7 @@ function DetailCard({
         <h2>
           <b>{name}</b>
         </h2>
-        <div className="col">
+        <div className="col ">
           <p>
             <b>Native Name: </b> {nativeName}
           </p>

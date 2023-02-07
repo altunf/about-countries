@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const DetailCardStyle = styled.div`
-  margin: 2rem 2rem;
   display: flex;
+  margin: 2rem 2rem;
 
   img {
     width: 700px;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardsStyle = styled.div`
   cursor: pointer;
+
   padding: 0;
   width: 23rem;
   margin: 12px;
@@ -12,8 +13,8 @@ export const CardsStyle = styled.div`
   background-color: ${(props) => props.theme.body};
 
   img {
-    height: 50%;
     width: 100%;
+    height: 50%;
   }
 
   div {
