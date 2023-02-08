@@ -44,7 +44,6 @@ Users should be able to:
 ### Built with
 
 
-- Mobile-first workflow
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Bootstrap](https://getbootstrap.com/)
