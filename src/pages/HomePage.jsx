@@ -51,7 +51,7 @@ function HomePage() {
       )
       .then((res) => {
         setCountries(res.data);
-        setfilterCountryLists(res.data);
+        setFilterCountryLists(res.data);
       });
 
   const getAllCountries = () =>
