@@ -20,18 +20,18 @@ function DetailPage() {
     countryDetails.name?.nativeName || {}
   )[Object.keys(countryDetails.name?.nativeName || {}).length - 1]?.common;
 
-  const countryNameFetch = () =>
+  const getCountryName = () =>
     axios
       .get(`https://restcountries.com/v3.1/name/${name}`)
       .then((res) => setCountryDetails(res.data[0]));
 
-  const countryCodeFetch = () =>
+  const getCountryCode = () =>
     axios
       .get(`https://restcountries.com/v3.1/alpha/${searchParams.get("codes")}`)
       .then((res) => setCountryDetails(res.data[0]));
 
   useEffect(() => {
-    searchParams.get("codes") ? countryCodeFetch() : countryNameFetch();
+    searchParams.get("codes") ? getCountryName() : getCountryCode();
   }, [searchParams]);
 
   return (
@@ -46,7 +46,7 @@ function DetailPage() {
           nativeName={countryNativeName}
           population={countryDetails.population}
           region={countryDetails.region}
-          subregion={countryDetails.subregion}
+          subRegion={countryDetails.subregion}
           capital={countryDetails.capital}
           tld={countryDetails.tld}
           currencies={countryCurrencies}

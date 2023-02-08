@@ -10,7 +10,7 @@ function DetailCard({
   population,
   currencies,
   languages,
-  subregion,
+  subRegion,
   capital,
   borders,
   region,
@@ -21,7 +21,7 @@ function DetailCard({
   let [searchParams, setSearchParams] = useSearchParams();
 
   const CountryLanguages = Object.values(languages || []).map(
-    (language) => " " + language
+    (language) => ` ${language}`
   );
 
   const bordersButton = borders?.map((border, index) => {
@@ -52,7 +52,7 @@ function DetailCard({
             <b>Region:</b> {region}
           </p>
           <p>
-            <b>Sub Region:</b> {subregion}
+            <b>Sub Region:</b> {subRegion}
           </p>
           <p>
             <b>Capital:</b> {capital}

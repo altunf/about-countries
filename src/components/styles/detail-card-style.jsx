@@ -5,8 +5,8 @@ export const DetailCardStyle = styled.div`
   margin: 2rem 2rem;
 
   img {
-    width: 700px;
-    height: 550px;
+    width: 500px;
+    height: 400px;
     object-fit: cover;
     margin-right: 7rem;
   }

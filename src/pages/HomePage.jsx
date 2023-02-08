@@ -12,7 +12,7 @@ function HomePage() {
   let [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  const [filterCountryLists, setfilterCountryLists] = useState([]);
+  const [filterCountryLists, setFilterCountryLists] = useState([]);
   const [countries, setCountries] = useState([]);
 
   const customFilter = (searchTerm) => {
@@ -21,7 +21,7 @@ function HomePage() {
         .toLowerCase()
         .includes(searchTerm.toLowerCase());
     });
-    setfilterCountryLists(filterCountryLists);
+    setFilterCountryLists(filterCountryLists);
   };
 
   const CountriesBoard = (
@@ -44,7 +44,7 @@ function HomePage() {
     </div>
   );
 
-  const regionFetch = () =>
+  const getRegion = () =>
     axios
       .get(
         `https://restcountries.com/v3.1/region/${searchParams.get("region")}`
@@ -54,14 +54,14 @@ function HomePage() {
         setfilterCountryLists(res.data);
       });
 
-  const allCountriesFetch = () =>
+  const getAllCountries = () =>
     axios.get("https://restcountries.com/v3.1/all").then((res) => {
       setCountries(res.data);
-      setfilterCountryLists(res.data);
+      setFilterCountryLists(res.data);
     });
 
   useEffect(() => {
-    searchParams.get("region") ? regionFetch() : allCountriesFetch();
+    searchParams.get("region") ? getRegion() : getAllCountries();
   }, [searchParams.get("region")]);
 
   return (
