@@ -1,26 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
 import { Cards } from "../components/Cards";
 import { SearchBar } from "../components/SearchBar";
 import { RegionFilter } from "../components/RegionFilter";
-
 import { HomePageStyle } from "./styles/home-page-style";
 
 function HomePage() {
-  let [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-
-  const [filterCountryLists, setFilterCountryLists] = useState([]);
   const [countries, setCountries] = useState([]);
+  const [filterCountryLists, setFilterCountryLists] = useState([]);
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const customFilter = (searchTerm) => {
-    let filterCountryLists = countries.filter((country) => {
-      return country.name.common
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-    });
+    let filterCountryLists = countries.filter((country) =>
+      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     setFilterCountryLists(filterCountryLists);
   };
 

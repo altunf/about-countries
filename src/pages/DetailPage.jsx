@@ -1,17 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-
 import { DetailCard } from "../components/DetailCard";
-
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { StyledButton, DetailPageStyle } from "./styles/detail-page-style";
 
 function DetailPage() {
-  let [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
   const { name } = useParams();
-
+  const navigate = useNavigate();
   const [countryDetails, setCountryDetails] = useState([]);
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const countryCurrencies = Object.values(countryDetails.currencies || {})[0]
     ?.name;
@@ -31,7 +28,7 @@ function DetailPage() {
       .then((res) => setCountryDetails(res.data[0]));
 
   useEffect(() => {
-    searchParams.get("codes") ? getCountryName() : getCountryCode();
+    searchParams.get("codes") ? getCountryCode() : getCountryName();
   }, [searchParams]);
 
   return (

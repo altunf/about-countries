@@ -1,5 +1,4 @@
 import { useSearchParams } from "react-router-dom";
-
 import {
   DetailCardStyle,
   BorderCountriesStyle,

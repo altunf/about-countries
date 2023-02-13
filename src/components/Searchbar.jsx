@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { FormStyle } from "./styles/search-bar-style";
 
 function SearchBar({ customFilter }) {

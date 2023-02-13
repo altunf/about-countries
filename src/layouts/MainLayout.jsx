@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 import { ThemeProvider } from "styled-components";
 import { BodyArea } from "../components/BodyArea";
 import { TopBar } from "../components/TopBar";
-
 import { darkTheme, lightTheme } from "../components/styles/theme-style";
 import { MainLayoutStyle } from "../layouts/styles/main-layout-style";
 import { GlobalStyle } from "../styles/global";

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-
 import { RegionFilterStyle } from "./styles/region-filter-style";
 
 const regionList = [
@@ -13,10 +12,9 @@ const regionList = [
 
 function RegionFilter() {
   const navigate = useNavigate();
-  let [searchParams, setSearchParams] = useSearchParams();
-
   const [isOpen, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const toggleDropdown = () => setOpen(!isOpen);
 
