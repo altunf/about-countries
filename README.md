@@ -52,4 +52,4 @@ Users should be able to:
 
 ## Author
 
-- Twitter - [@altunnfirat](https://www.twitter.com/altunnfirat)
+Fırat Altun
